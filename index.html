@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Cronometro</title>
-	<script type="text/javascript" src="jquery.min.js"></script>
-	<script type="text/javascript" src="main.js"></script>
-	<style type="text/css">
-		body {
-			background-color: #222;
-		}
-		#contador {
-			color: #c9c9c9;
-			font-size: 5em;
-			text-align: center;
-			position: absolute;
-			top: 50%;
-			left:50%;
-			transform: translate(-50%,-50%);
-		}
-	</style>
-</head>
-<body>
-	<div id="contador"></div>
-</body>
+  <head>
+    <title>Cronometro</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style type="text/css">
+      body {
+        background-color: #222;
+        color: #c9c9c9;
+        font-size: 5em;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Roboto", sans-serif;
+      }
+      span {
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contador"></div>
+    <span>Data de entrega: 10/12/2019</span>
+  </body>
 </html>
