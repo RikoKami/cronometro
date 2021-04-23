@@ -1,29 +1,28 @@
-$(document).ready(function() {
-  var cronometro = function() {
-    var monsths = [
-      "",
+document.addEventListener("DOMContentLoaded", () => {
+  var cronometro = function () {
+    var months = [
       "Jan",
       "Feb",
       "Mar",
-      "May",
       "Apr",
+      "May",
       "Jun",
       "Jul",
       "Aug",
       "Sep",
       "Oct",
       "Nov",
-      "Dec"
+      "Dec",
     ];
 
-    var dataFinal = "10/12/2019";
-    var horaFinal = "00:00:00";
+    var dataFinal = "22/04/2021";
+    var horaFinal = "22:25:00";
 
-    var dataSplited = dataFinal.split("/");
+    var dataSplitted = dataFinal.split("/");
 
-    var dia = parseInt(dataSplited[0], 10);
-    var mes = monsths[parseInt(dataSplited[1], 10)];
-    var ano = parseInt(dataSplited[2], 10);
+    var dia = parseInt(dataSplitted[0], 10);
+    var mes = months[parseInt(dataSplitted[1] - 1, 10)];
+    var ano = parseInt(dataSplitted[2], 10);
 
     var dataTo = mes + " " + dia + ", " + ano + " " + horaFinal;
 
@@ -43,28 +42,22 @@ $(document).ready(function() {
     var segundos = Math.floor((distancia % minuto) / segundo);
 
     if (dias > 1) {
-      var diasConcate = dias + " dias ";
+      var diasConcat = dias + " dias ";
     } else {
-      var diasConcate = dias + " dia ";
+      var diasConcat = dias + " dia ";
     }
 
-    var horasConcate = horas + "h ";
-    var minutosConcate = minutos + "m ";
-    var segundosConcate = segundos + "s ";
-    var totalConcate =
-      diasConcate + horasConcate + minutosConcate + segundosConcate;
+    var horasConcat = horas + "h ";
+    var minutosConcat = minutos + "m ";
+    var segundosConcat = segundos + "s ";
+    var totalConcat = diasConcat + horasConcat + minutosConcat + segundosConcat;
+    console.log(totalConcat);
 
     if (distancia < 0) {
-      $("#contador")
-        .html("Expirou o tempo!")
-        .css("color", "red");
-      $("#btnSlider")
-        .attr("disabled", "disabled")
-        .children(".btnInnerText")
-        .text("Encerrado")
-        .css("text-transform", "uppercase");
+      document.getElementById("contador").textContent = "Expirou o tempo";
+      document.getElementById("contador").style.color = "red";
     } else {
-      $("#contador").html(totalConcate);
+      document.getElementById("contador").innerText = totalConcat;
     }
 
     setTimeout(cronometro, 1000);
