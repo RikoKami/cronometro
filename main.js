@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (distancia < 0) {
       document.getElementById("contador").textContent = "Expirou o tempo";
-      document.getElementById("contador").style.color = "red";
+      document.getElementById("contador").style.color = "#e5383b";
     } else {
       document.getElementById("contador").innerText = totalConcat;
     }
