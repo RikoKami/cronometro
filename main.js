@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  var cronometro = function () {
+  let dataFinal = "23/04/2021";
+  let horaFinal = "22:25:00";
+
+  document.getElementsByTagName("span")[0].append(dataFinal);
+
+  const cronometro = () => {
     var months = [
       "Jan",
       "Feb",
@@ -15,11 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Dec",
     ];
 
-    var dataFinal = "22/04/2021";
-    var horaFinal = "22:25:00";
-
     var dataSplitted = dataFinal.split("/");
-
     var dia = parseInt(dataSplitted[0], 10);
     var mes = months[parseInt(dataSplitted[1] - 1, 10)];
     var ano = parseInt(dataSplitted[2], 10);
@@ -51,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     var minutosConcat = minutos + "m ";
     var segundosConcat = segundos + "s ";
     var totalConcat = diasConcat + horasConcat + minutosConcat + segundosConcat;
-    console.log(totalConcat);
 
     if (distancia < 0) {
       document.getElementById("contador").textContent = "Expirou o tempo";
